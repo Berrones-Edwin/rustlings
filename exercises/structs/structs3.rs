@@ -16,7 +16,7 @@ struct Package {
 impl Package {
     fn new(sender_country: String, recipient_country: String, weight_in_grams: i32) -> Package {
         if weight_in_grams <= 0 {
-            // Something goes here...
+            panic!("The weight_in_grams should not been minor than zero!!");
         } else {
             Package {
                 sender_country,
@@ -26,12 +26,17 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> ??? {
+    fn is_international(&self) -> bool {
         // Something goes here...
+        if self.sender_country == "Canada" && self.recipient_country=="Canada"  {
+            return false;
+        }
+        true
     }
 
-    fn get_fees(&self, cents_per_gram: i32) -> ??? {
-        // Something goes here...
+    fn get_fees(&self, cents_per_gram: i32) -> i32 {
+      
+        self.weight_in_grams * cents_per_gram
     }
 }
 
