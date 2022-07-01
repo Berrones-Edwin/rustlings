@@ -6,8 +6,8 @@
 fn main() {
     let optional_word = Some(String::from("rustlings"));
     // TODO: Make this an if let statement whose value is "Some" type
-    word = optional_word {
-        println!("The word is: {}", word);
+    if let word = optional_word {
+        println!("The word is: {}", word.unwrap());
     } else {
         println!("The optional word doesn't contain anything");
     }
@@ -16,10 +16,24 @@ fn main() {
     for x in 1..10 {
         optional_integers_vec.push(Some(x));
     }
+    // println!("{:?}",optional_integers_vec);
 
     // TODO: make this a while let statement - remember that vector.pop also adds another layer of Option<T>
     // You can stack `Option<T>`'s into while let and if let
-    integer = optional_integers_vec.pop() {
-        println!("current value: {}", integer);
+    while let integer = optional_integers_vec.pop() {
+        // println!("current value: {:?}", integer.unwrap().unwrap());
+
+        match integer {
+            Some(x) => match x {
+                Some(y) => println!("current value: {:?}", y),
+                None => println!("no match"),
+            },
+            None => println!("no match"),
+            // _ =>  println!("no match"),
+        }
     }
+
+    // let x = optional_integers_vec.pop();
+
+    // println!("{:#?}",x.unwrap().unwrap());
 }
