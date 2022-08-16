@@ -11,18 +11,7 @@
 // I AM NOT DONE
 
 // Put your function here!
-<<<<<<< HEAD
-fn calculate_apple_price(apples:i32)->i32 {
-    let mut costs = 2;
-
-    if apples > 40 {
-        costs = 1;
-    }
-   costs * apples
-}
-=======
-// fn calculate_price_of_apples {
->>>>>>> upstream/main
+// fn calculate_apple_price {
 
 // Don't modify this function!
 #[test]
