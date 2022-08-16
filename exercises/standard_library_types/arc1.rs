@@ -16,7 +16,7 @@
 // Make this code compile by filling in a value for `shared_numbers` where the
 // first TODO comment is, and create an initial binding for `child_numbers`
 // where the second TODO comment is. Try not to create any copies of the `numbers` Vec!
-// Execute `rustlings hint arc1` for hints :)
+// Execute `rustlings hint arc1` or use the `hint` watch subcommand for a hint.
 
 // I AM NOT DONE
 
@@ -32,12 +32,7 @@ fn main() {
     for offset in 0..8 {
         let child_numbers = // TODO
         joinhandles.push(thread::spawn(move || {
-            let mut i = offset;
-            let mut sum = 0;
-            while i < child_numbers.len() {
-                sum += child_numbers[i];
-                i += 8;
-            }
+            let sum: u32 = child_numbers.iter().filter(|n| *n % 8 == offset).sum();
             println!("Sum of offset {} is {}", offset, sum);
         }));
     }

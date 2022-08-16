@@ -125,6 +125,9 @@ fn get_hint_for_single_test() {
 fn all_exercises_require_confirmation() {
     for exercise in glob("exercises/**/*.rs").unwrap() {
         let path = exercise.unwrap();
+        if path.file_name().unwrap() == "mod.rs" {
+            continue
+        }
         let source = {
             let mut file = File::open(&path).unwrap();
             let mut s = String::new();
@@ -173,7 +176,7 @@ fn run_single_test_success_with_output() {
         .current_dir("tests/fixture/success/")
         .assert()
         .code(0)
-        .stdout(predicates::str::contains("THIS TEST TOO SHALL PAS"));
+        .stdout(predicates::str::contains("THIS TEST TOO SHALL PASS"));
 }
 
 #[test]
@@ -184,7 +187,7 @@ fn run_single_test_success_without_output() {
         .current_dir("tests/fixture/success/")
         .assert()
         .code(0)
-        .stdout(predicates::str::contains("THIS TEST TOO SHALL PAS").not());
+        .stdout(predicates::str::contains("THIS TEST TOO SHALL PASS").not());
 }
 
 #[test]

@@ -121,7 +121,7 @@ impl Exercise {
                     r#"[package]
 name = "{}"
 version = "0.0.1"
-edition = "2018"
+edition = "2021"
 [[bin]]
 name = "{}"
 path = "{}.rs""#,
@@ -154,7 +154,7 @@ path = "{}.rs""#,
                 Command::new("cargo")
                     .args(&["clippy", "--manifest-path", CLIPPY_CARGO_TOML_PATH])
                     .args(RUSTC_COLOR_ARGS)
-                    .args(&["--", "-D", "warnings"])
+                    .args(&["--", "-D", "warnings","-D","clippy::float_cmp"])
                     .output()
             }
         }

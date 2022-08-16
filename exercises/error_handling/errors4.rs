@@ -1,5 +1,5 @@
 // errors4.rs
-// Make this test pass! Execute `rustlings hint errors4` for hints :)
+// Execute `rustlings hint errors4` or use the `hint` watch subcommand for a hint.
 
 // I AM NOT DONE
 
@@ -14,6 +14,7 @@ enum CreationError {
 
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
+<<<<<<< HEAD
 
         if value < 0 {
             return Err(CreationError::Negative)
@@ -22,6 +23,9 @@ impl PositiveNonzeroInteger {
             return Err(CreationError::Zero)
 
         }
+=======
+        // Hmm...? Why is this only returning an Ok value?
+>>>>>>> upstream/main
         Ok(PositiveNonzeroInteger(value as u64))
     }
 }

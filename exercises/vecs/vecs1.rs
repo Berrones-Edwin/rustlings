@@ -1,8 +1,8 @@
-// vec1.rs
+// vecs1.rs
 // Your task is to create a `Vec` which holds the exact same elements
 // as in the array `a`.
 // Make me compile and pass the test!
-// Execute the command `rustlings hint vec1` if you need hints.
+// Execute `rustlings hint vecs1` or use the `hint` watch subcommand for a hint.
 
 // I AM NOT DONE
 
