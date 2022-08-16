@@ -23,7 +23,8 @@ fn vec_map(v: &Vec<i32>) -> Vec<i32> {
     v.iter().map(|num| {
         // TODO: Do the same thing as above - but instead of mutating the
         // Vec, you can just return the new number!
-        ???
+        // ???
+        num*2
     }).collect()
 }
 
